@@ -11,7 +11,8 @@ public class Arrays{
         System.out.println("Enter Elements in Array..");
         for (int i = 0; i < size; i++) {
         arr[i] = sc.nextInt();
-        }
+
         
+        }
     }
 }

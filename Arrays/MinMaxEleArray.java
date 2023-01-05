@@ -54,5 +54,7 @@ public class MinMaxEleArray {
         objmm.MinMaxCheck(arr, size);
         System.out.println("Max No is : " + objmm.max);
         System.out.println("Min No is : " + objmm.min);
+
+        sc.close();
     }
 }

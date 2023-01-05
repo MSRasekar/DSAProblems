@@ -65,5 +65,6 @@ public class ArrayRevers {
         System.out.println("By Recursive way");
         ReversArrayRec(arr, 0, size - 1);
         printArray(arr, size);
+        sc.close();
     }
 }

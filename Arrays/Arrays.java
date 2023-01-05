@@ -20,5 +20,7 @@ public class Arrays {
             arr[i] = sc.nextInt();
 
         }
+
+        sc.close();
     }
 }

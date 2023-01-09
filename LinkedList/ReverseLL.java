@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class ReverseLL {
 
@@ -29,53 +30,65 @@ public class ReverseLL {
 
     }
 
-    public void reverseLinkedList(){
+    public void reverseLinkedList() {
+        System.out.println("Reversed Linked List is..");
+        // corner case -> check if head is null or not..
+        if (head == null || head.next == null) {
+            return;
+        }
+        // initilizing two pointers 
+        Node prev = head;
+        Node curr = head.next;
 
-        Node prev = null;
-        Node curr;
-        Node temp;
-        curr = head;
-        temp = head.next;
-        
-        while(curr.next != null){
-            curr.next = temp;
-            prev = curr.next;
+        while (curr != null) {
+
+            // third pointer to prevent data loss
+            Node temp = curr.next;
+            // connecting prev node to curr node next address field
+            curr.next = prev; 
+
+            // updating the pointer
             prev = curr;
             curr = temp;
         }
+        // updating head pointer..
+        head.next = null;
+        head = prev;
 
-        prev.next = null;
-        head = curr;
     }
 
     public void printList() {
         Node temp = head;
 
         if (head == null) {
-            System.out.println("Printed Empty List");
+            System.out.println("Empty List Printed.\n head -> null\n");
             return;
         }
-
+        
         while (temp != null) {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
-        System.out.println("null");
+        System.out.println("null\n");
     }
+
 
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
         ReverseLL rll = new ReverseLL();
 
-
-        rll.addFirst(20);
-        rll.addFirst(30);
+        rll.printList();
         rll.addFirst(40);
+        rll.addFirst(50);
+        rll.addFirst(60);
+        rll.addFirst(70);
 
         rll.printList();
+
         rll.reverseLinkedList();
+
         rll.printList();
 
     }
 }
-

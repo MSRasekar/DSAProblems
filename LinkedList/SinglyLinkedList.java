@@ -6,7 +6,7 @@ import java.util.Scanner;
 // while we retrive/search any node --> time complexcity --> O(n)
 // i.e. Linked List is suitable for frequently addition of data..
 
-public class LLExample {
+public class SinglyLinkedList {
 
     // head instance is created
     Node head;
@@ -184,7 +184,7 @@ public class LLExample {
     public static void Menu() {
 
         Scanner sc = new Scanner(System.in);
-        LLExample ll = new LLExample();
+        SinglyLinkedList ll = new SinglyLinkedList();
         int choice = 0, val;
         System.out.println(" ***** Welcome to Linked List Program ***** \n");
 

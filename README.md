@@ -1,18 +1,18 @@
 # DSA Problem Updates
 
-# Arrays Problems
+## Arrays Problems
 1. Simple Array
 2. Reverse an array
 3. Min and Max element in array
 4. 
 
-# Linked List Problems
+## Linked List Problems
 1. Signly Linked List (Add , Delete, Print, GetSize)
 2. Reverse Singly linked list by iterative method
 3. Linked List with Collection Framework
 4. 
 
-# Tree - Binary Tree
+## Tree - Binary Tree
 1. Creation of BT
 2. Traversal of BT 
     a. In-order
@@ -21,7 +21,7 @@
 3. Binary Search Tree - BST
 4. 
 
-# Graph 
+## Graph 
 1. Creation of Graph
 2. Traversal of Graph
     a. BFS (Breadth First Search)

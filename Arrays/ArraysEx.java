@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Arrays {
+public class ArraysEx {
 
     static void printArray(int[] arr, int size) {
         for (int i = 0; i < size; i++)
@@ -23,4 +23,6 @@ public class Arrays {
 
         sc.close();
     }
+
+  
 }

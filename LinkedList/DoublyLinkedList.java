@@ -1,32 +1,23 @@
 import java.util.Scanner;
 
-/* ********** SINGULAR LINKED LIST *********** */
-// properties of linked list are as follows..
-// while we add any node --> time complexcity --> O(1)
-// while we retrive/search any node --> time complexcity --> O(n)
-// i.e. Linked List is suitable for frequently addition of data..
-
-public class SinglyLinkedList {
-
-    // head instance is created
+public class DoublyLinkedList{
+    
     Node head;
     private int size;
 
     // node class for structure of linked list
     public class Node {
         public int data;
+        public Node prev;
         public Node next;
 
         public Node(int val) {
-            data = val;
-            next = null;
+            this.data = val;
+            this.prev = null;
+            this.next = null;
+        
         }
     }
-
-    /*
-     * Major operation in LL are
-     * 1. Add Node, 2. delete Node, 3. Print LL , 4. Size check
-     */
 
     // add node at first position
     public void addNodeAtFirst(int val) {
@@ -60,6 +51,7 @@ public class SinglyLinkedList {
             temp = temp.next;
         }
         temp.next = newNode;
+        newNode.prev = temp;
     }
 
     // add node at specific postition..
@@ -82,6 +74,8 @@ public class SinglyLinkedList {
             }
             newNode.next = temp.next;
             temp.next = newNode;
+            newNode.prev = temp;
+            temp.next.prev = newNode;
         }
     }
 
@@ -106,6 +100,7 @@ public class SinglyLinkedList {
         // we can make next node of head as head..
         // so head node will be delete
         head = head.next;
+        head.prev = null;
 
     }
 
@@ -146,7 +141,9 @@ public class SinglyLinkedList {
 
         System.out.println("Enter Position for Delete Node..");
         int position = sc.nextInt();
+        
         size--;
+
         Node temp = head;
         Node ptr = head.next;
         if (isEmpty()) {
@@ -159,6 +156,7 @@ public class SinglyLinkedList {
             }
         }
         temp.next = ptr.next;
+        ptr.next.prev = temp;
     }
 
     // method to print linked list
@@ -184,9 +182,9 @@ public class SinglyLinkedList {
     public static void Menu() {
 
         Scanner sc = new Scanner(System.in);
-        SinglyLinkedList ll = new SinglyLinkedList();
+        DoublyLinkedList dll = new DoublyLinkedList();
         int choice = 0, val;
-        System.out.println(" ***** Welcome to Singly Linked List Program ***** \n");
+        System.out.println(" ***** Welcome to Doubly Linked List Program ***** \n");
 
         do {
             System.out.println(
@@ -201,13 +199,13 @@ public class SinglyLinkedList {
                     val = sc.nextInt();
                     switch (key) {
                         case 1:
-                            ll.addNodeAtFirst(val);
+                            dll.addNodeAtFirst(val);
                             break;
                         case 2:
-                            ll.addNodeAtLast(val);
+                            dll.addNodeAtLast(val);
                             break;
                         case 3:
-                            ll.addNodeAtPosition(val);
+                            dll.addNodeAtPosition(val);
                             break;
                         default:
                             System.out.println("\nInvalid Option!!!\n");
@@ -220,13 +218,13 @@ public class SinglyLinkedList {
                     int key1 = sc.nextInt();
                     switch (key1) {
                         case 1:
-                            ll.deleteFromFirst();
+                            dll.deleteFromFirst();
                             break;
                         case 2:
-                            ll.deleteFromLast();
+                            dll.deleteFromLast();
                             break;
                         case 3:
-                            ll.deleteFromPosition();
+                            dll.deleteFromPosition();
                             break;
                         default:
                             System.out.println("\nInvalid Option!!!\n");
@@ -234,10 +232,10 @@ public class SinglyLinkedList {
                     break;
                 case 3:
                     System.out.println("The Linked List as follows..");
-                    ll.printList();
+                    dll.printList();
                     break;
                 case 4:
-                    System.out.println("Size of Linked list is: " + ll.getSize());
+                    System.out.println("Size of Linked list is: " + dll.getSize());
                     break;
                 case 5:
                     System.out.println("Thank You For Using...");
@@ -254,4 +252,6 @@ public class SinglyLinkedList {
 
         Menu();
     }
+
+    
 }

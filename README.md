@@ -12,6 +12,7 @@
 3. Linked List with Collection Framework
 4. 
 
+<<<<<<< HEAD
 ## Sort and Search Algo
 
 1. Linear Search
@@ -20,6 +21,8 @@
 4. Selection Sort
 5. Insertion Sort
 
+=======
+>>>>>>> ae44b19094ee40d9b5c9de7a5b5d8abddc91c67b
 ## Tree - Binary Tree
 1. Creation of BT
 2. Traversal of BT 
@@ -36,6 +39,7 @@
     b. DFS (Depth First Search)
 3. MST (Minimum Spanning Tree)
 4. 
+<<<<<<< HEAD
 
 ## Recurrsion Easy Level Problem.
 
@@ -49,3 +53,5 @@
 5. Fibonacci Series upto n^th term
 6. Program for calculate X to power n ( statck Size == n)
 7. Program for calculate X to power n ( statck Size == logn)
+=======
+>>>>>>> ae44b19094ee40d9b5c9de7a5b5d8abddc91c67b
